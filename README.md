@@ -1,1 +1,2 @@
 cicd pipeline
+"Destroying resources"
