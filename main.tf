@@ -1,10 +1,10 @@
 terraform {
   backend "s3" {
-    bucket = "065148798076-cicd-bucket"
-    key = "env/dev/terraform.tfstate"
-    region = "ap-south-1"
+    bucket       = "065148798076-cicd-bucket"
+    key          = "env/dev/terraform.tfstate"
+    region       = "ap-south-1"
     use_lockfile = true
-    encrypt = true  
+    encrypt      = true
   }
 }
 
