@@ -2,7 +2,7 @@ name: CI part for pipeline
 on:
     pull_request:
         branches:
-            - master
+            - main
 jobs:
     terraform_setup:
         runs-on: ubuntu-latest
