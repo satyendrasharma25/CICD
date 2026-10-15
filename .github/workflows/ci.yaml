@@ -1,0 +1,29 @@
+name: CI part for pipeline
+on:
+    pull_request:
+        branches:
+            - master
+jobs:
+    terraform_setup:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: setup terraform
+              uses: hashicorp/setup-terraform@v2
+            - name: Cofigure AWS credentials
+              uses:  aws-actions/configure-aws-credentials@v2
+              with:
+                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  aws-region: ap-south-1
+            - name: terraform initialization code
+              run: terraform init
+            - name: Terraform validate
+              run: terraform validate
+            - name: Terraform Formatting
+              run: terraform fmt --check
+            - name: Terraform plan
+              run: terraform plan
+            - name: Terraform code Scan with tfSec
+              uses: aquasecurity/tfsec-action@v1.0.0
