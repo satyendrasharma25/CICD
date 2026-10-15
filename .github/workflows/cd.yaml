@@ -2,7 +2,7 @@ name: terraform CD
 on:
  push:
    branches:
-     - master
+     - main
 jobs:
   terraform_apply:
     runs-on: ubuntu-latest
