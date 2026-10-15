@@ -54,7 +54,7 @@ resource "aws_security_group" "web_sg" {
 
   # 📤 Outbound (generally open rehta hai)
   egress {
-    description = "Allow all outbound traffic"
+    description = "Allow all outbound  from traffic"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
