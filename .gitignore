@@ -1,0 +1,36 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# CLI config
+.terraformrc
+terraform.rc
+
+# Sensitive files
+*.tfvars
+*.tfvars.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Logs
+crash.log
+session.logs
+
+# CLI config
+.terraformrc
+terraform.rc
+
+#bootstap
+bootstrap/
